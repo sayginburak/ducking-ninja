@@ -1,0 +1,14 @@
+<h1>Cars#index</h1>
+<%=link_to "Yeni Kayıt", new_car_path%>
+<%@cars.each do |c|%>
+<p>
+	<%=c.make%>
+	<%=c.model%>
+	<%=c.year%>
+	<%=link_to("Detay", {:action=>"show", :id=>c.id}, :class=>"action show")%>
+	<%=link_to("Sil", {:action=>"delete", :id=>c.id}, :class=>"action delete")%>
+	<%=link_to("Düzenle", {:action=>"edit", :id=>c.id}, :class=>"action delete")%>
+
+
+</p>
+<%end%>

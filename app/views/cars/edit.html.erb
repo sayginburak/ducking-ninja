@@ -1,0 +1,15 @@
+<h1>Cars#edit</h1>
+<%=link_to "Anasayfa'ya Dön", cars_path%>
+
+
+<%= form_for @car, url: {action: "update"}, html: {class: "edit_form"} do |f| %>
+  <p><%=label_tag("Marka")%><%= f.text_field :make %></p>
+  <p><%=label_tag("Model")%><%= f.text_field :model %></p>
+  <p><%=label_tag("Yıl")%><%= f.number_field :year, in: 1990..2004 %></p>
+  <p><%=label_tag("Kapı Sayısı")%><%= f.number_field :doors_count, in: 2..7 %></p>
+  <p><%=label_tag("VIN")%><%= f.text_field :vin %></p>
+  <p><%=label_tag("Fiyat")%><%= f.text_field :price %></p>
+  <p><%=label_tag("Durum")%><%=radio_button("car", "rented", "true")%><%=radio_button("car", "rented", "false")%></p>
+
+  <p><%= f.submit "Düzenle" %></p>
+<% end %>

@@ -1,0 +1,7 @@
+<h1>Cars#delete</h1>
+Gerçekten silmek istiyor musunuz?<br>
+<%=@car.make+" "%><%=@car.model+" "%><%=@car.year %>
+<%=link_to("Evet", {:action => "destroy", :id => @car.id}, :method=> :delete)%>
+<br>
+<%=link_to("Geri Dön", {:action => "index"})%>
+
